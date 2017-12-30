@@ -33,15 +33,18 @@ for tweet in iterator:
     tweeter = tweet['user']['screen_name'] #the twitter user that tweeted at the bot
     text = tweet['text'] #the text of the tweet
     words = text.split(' ') #to get each string in the tweet
-    handle = words[2] #if the tweet is formatted properly this is the handle to imitate
+    if(words[2][0]!='@'):
+        continue
+    else:
+     handle = words[2] #if the tweet is formatted properly this is the handle to imitate
     #the bot reads in all tweets of the user handle and overwrites previous info
-    imitatebot.read(get_all_tweets.get_all_tweets(handle),overwrite=True)
-    prefix = '@%s' %tweeter #the bot tweets at whoever tweeted at the bot
-    suffix = '#imitatebot imitated %s' %handle 
+     imitatebot.read(get_all_tweets.get_all_tweets(handle),overwrite=True)
+     prefix = '@%s' %tweeter #the bot tweets at whoever tweeted at the bot
+     suffix = '#imitatebot imitated %s' %handle 
     #tweets the imitation tweet
-    imitatebot.twitter_tweeting_start(days=0, hours=0, minutes=1,keywords=None, prefix=prefix, suffix=suffix)
-    time.sleep(60.5)#sleep to give the bot time to tweet
-    imitatebot.twitter_tweeting_stop()#stops the bot tweeting after one tweet and waits for the next tweet
+     imitatebot.twitter_tweeting_start(days=0, hours=0, minutes=1,keywords=None, prefix=prefix, suffix=suffix)
+     time.sleep(60.5)#sleep to give the bot time to tweet
+     imitatebot.twitter_tweeting_stop()#stops the bot tweeting after one tweet and waits for the next tweet
 
 
 
