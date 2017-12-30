@@ -3,4 +3,6 @@ This bot utilizes [this MarkovBot code](https://github.com/esdalmaijer/markovbot
 
 In order to utilize this bot code, in addition to the code mentions above, consumer and access keys must be generated, as explained in [this great how-to](https://themepacific.com/how-to-generate-api-key-consumer-token-access-key-for-twitter-oauth/994/). 
 
+A method to constantly run this bot is upcoming. 
+
 A future update to this bot will allow the bot to imitate a user as long as the mention has a valid handle in it, rather than requiring the "@imitatebot string @handle..." format. 
